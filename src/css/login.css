@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Homenaje');
+
+body {
+  background-image: linear-gradient(to bottom, #ff0, #419641, #000 15%);
+  background-attachment: fixed;
+  /*background-image: url("http://sf.co.ua/12/12/wallpaper-2516302.jpg"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Homenaje', sans-serif;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+h1 {
+  font-size: 60px;
+  text-shadow: 2px 2px black;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+h2 {
+  text-shadow: 2px 2px black;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.line-separator{
+  height:1px;
+  background:#717171;
+  border-bottom:1px solid #313030;
+}
+
+#scene {
+  position: absolute;
+  left: 50%; /* position mid screen */
+  top: 50%; /* position mid screen */
+  perspective: 100px; /* lower this, the longer the particles is casted */
+}
+
+#emitter {
+  position: absolute;
+  transform-style: preserve-3d; /* Give the 3d-animation that the particles is 3d */
+  animation: rotate 4s infinite linear; /* Set rotation speed */
+}
+
+.particle {
+  position: absolute;
+  width: 10px; /* Size of Particle */
+  height: 10px; /* Size of Particle */
+  border-radius: 20%;   /* Shape of the particles */
+  transition: 1s ease-in; /* Set how long the particle shall we casted and speed*/
+  background: white;
+}
+
+/* makes the particles rotate */
+@keyframes rotate {
+  0% {
+    transform: rotateY(0deg) rotateZ(-180deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateZ(180deg);
+  }
+}
+
+#container {
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-top: 18vh;
+  display: none;
+}
+/* FrontPage */
+#frontContainer {
+  margin-top: 40vh;
+  display: block;
+}
+#loginContainer {
+  display: none;
+  height: 600px;
+}
+#createAccountContainer {
+  display: none;
+  height: 600px;
+}
+.btn:focus {
+  outline: 0 !important;
+  background: #f5f5f5;
+  background-image: linear-gradient(to bottom, #ff0, #419641 100%);
+}
+.input-lg {
+  border-radius: 50px;
+}
+.btn-lg {
+  padding: 10px 16px;
+  font-size: 50px;
+  line-height: 1.3333333;
+  border-radius: 50px;
+  height: 100px;
+  width: 400px;
+}
+.btn-md {
+  padding: 10px 16px;
+  line-height: 1.3333333;
+  border-radius: 50px;
+  height: 40px;
+  width: 125px;
+}
+.btn-success {
+  color: #fff;
+  background-image: linear-gradient(to bottom, #ff0, #419641 100%);
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border-color: #fff;
+}
+.btn-success:hover {
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  background: #f5f5f5;
+  background-image: linear-gradient(to bottom, #435334, #419641 100%);
+}
+.frontBackButton {
+  margin-bottom: auto;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Админ</title>
+    <!-- Implement Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Implement my own CSS file -->
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<div id="container">
+
+    <!-- title -->
+    <div id="titleContainer">
+        <h1 id="adminTitle">Админ панель</h1>
+    </div>
+
+    <!-- Logo -->
+    <div id="logoContainer">
+        <h2 id="adminLogo"> < account name ></h2>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar_container col-md-2">
+        <ul class="sidebar-nav col-md-2">
+            <ul><button class="btn-success" onclick="showCreateAccount()">Создать Аккаунт</button></ul>
+            <ul><button class="btn-success" onclick="showReadAccount()">Читать Аккаунт</button></ul>
+            <ul><button class="btn-success" onclick="showUpdateAccount()">Обновить Аккаунт</button></ul>
+            <ul><button class="btn-success" onclick="showDeleteAccount()">Удалить Аккаунт</button></ul>
+            <ul id="logout"><button class="btn-success" onclick="logOut()">Выйти</button></ul>
+        </ul>
+    </div>
+
+    <!-- Page Content -->
+    <div class="page-container">
+            <!-- Create Account -->
+            <div id="adminCreateAccount">
+                <table class="table pre-scrollable">
+                    <h2 class="panel-title">Создать Аккаунты</h2>
+                    <br>
+                    <div class="line-separator"></div>
+                    <br>
+                    <thead>
+                    <th>Логин</th>
+                    <th>Пароль</th>
+                    <th>E-mail</th>
+                    <th>Статус Аккаунта</th>
+                    <th></th>
+                    </thead>
+                    <tbody id="createAccount" class="pre-scrollable">
+                    <td><input id="username" style="color: black"></td>
+                    <td><input id="password" style="color: black"></td>
+                    <td><input id="email" style="color: black"></td>
+                    <td><input type="number" id="accountStatus" style="color: black"></td>
+                    <td><button type="submit" id="btnCreateAccount" class="btn btn-warning" onclick="createAccount()">Create Account</button></td>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Read Account -->
+            <div id="adminReadAccount">
+                <table class="table pre-scrollable">
+                    <h2 class="panel-title">Смотреть Аккаунты</h2>
+                    <br>
+                    <div class="line-separator"></div>
+                    <br>
+                    <thead>
+                        <th>Id</th>
+                        <th>Логин</th>
+                        <th>Пароль</th>
+                        <th>E-mail</th>
+                        <th>Баланс</th>
+                        <th>Местоположение</th>
+                        <th>ЭТО онлайн</th>
+                        <th>Статус Аккаунта</th>
+                    </thead>
+                    <tbody id="readAccount">
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Update Account -->
+            <div id="adminUpdateAccount">
+                <table class="table pre-scrollable">
+                    <h2 class="panel-title">Обновить Аккаунты</h2>
+                    <br>
+                    <div class="line-separator"></div>
+                    <br>
+                    <thead>
+                    <th>Id</th>
+                    <th>Логин</th>
+                    <th>Пароль</th>
+                    <th>E-mail</th>
+                    <th>Статус Аккаунта</th>
+                    <th></th>
+                    <th></th>
+                    </thead>
+                    <tbody id="updateAccount">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Delete Account -->
+            <div id="adminDeleteAccount">
+                <table class="table pre-scrollable">
+                    <h2 class="panel-title">Удалить Аккаунты</h2>
+                    <br>
+                    <div class="line-separator"></div>
+                    <br>
+                    <thead>
+                    <th>Id</th>
+                    <th>Логмн</th>
+                    <th>Пароль</th>
+                    <th>E-mail</th>
+                    <th>Статус Аккаунта</th>
+                    <th></th>
+                    </thead>
+                    <tbody id="deleteAccount">
+
+                    </tbody>
+                </table>
+            </div>
+    </div>
+
+
+
+</div>
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<!-- Implement JQeury lib -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- Implement Bootstrap lib -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<!-- Implement My Own JavaScript file -->
+<script src="js/admin.js"></script>
+</body>
+</html>

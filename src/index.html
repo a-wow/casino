@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Казино WoW</title>
+    <!-- Implement Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Implement my own CSS file -->
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+<!-- Set the background (Particles) -->
+<div id="scene">
+    <div id="emitter"></div>
+</div>
+
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<div id="frontParent" class="col-md-offset-2">
+
+    <!-- Frontpage Panel -->
+    <div id="frontContainer" class="col-md-10">
+        <div>
+            <button id="frontCreateAccountButton" type="button" class="btn btn-success btn-lg" onclick="showFrontCreateAccount()">Создать Аккаунт</button>
+            <button id="frontLoginButton" type="button" class="btn btn-success btn-lg pull-right" onclick="showFrontLogin()">Войти</button>
+        </div>
+    </div>
+</div>
+<div id="parent" class="col-md-offset-4">
+    <div id="container" class="col-md-6 panel panel-default">
+
+        <!-- Log in Panel -->
+        <div id="loginContainer">
+                <h1>Пользователь</h1>
+                <h2>Войдите, чтобы получить права пользователя</h2>
+                <div class="line-separator"></div>
+            <form action="php/login.php" method="POST">
+                <h4>Логин:</h4>
+                <input class="form-control input-lg" id="accountNameInput" name="username" type="text" placeholder="Account Name">
+                <br>
+                <h4>Пароль:</h4>
+                <input class="form-control input-lg" id="passwordInput" name="pass" type="password" placeholder="Password">
+                <br>
+                <br>
+                <div class="col-md-12 text-center">
+                    <button id="logInButton" type="submit" value="wowcasino.html" class="btn btn-success btn-md">Войти</button>
+                </div>
+            </form>
+            <div class="col-md-2 text-center" style="padding-top: 20px;">
+                <button type="button" class="frontBackButton btn btn-success" onclick="showFrontpage()"><span class="glyphicon glyphicon-arrow-left"></span> Назад</button>
+            </div>
+        </div>
+
+        <!-- Create Account Panel -->
+        <div id="createAccountContainer">
+            <h1>Создать Аккаунт</h1>
+            <div class="line-separator"></div>
+            <form action="php/createAccount.php" method="POST">
+                <h4>Логин:</h4>
+                <input class="form-control input-lg" id="accountName" name="username" type="text" placeholder="Account Name">
+                <br>
+                <h4>Пароль:</h4>
+                <input class="form-control input-lg" id="password" name="pass" type="password" placeholder="Password">
+                <br>
+                <input class="form-control input-lg" id="passwordRedo" type="password" placeholder="Redo Password">
+                <br>
+                <h4>E-mail:</h4>
+                <input class="form-control input-lg" id="email" name="email" type="text" placeholder="Email">
+                <br>
+                <input class="form-control input-lg" id="emailRedo" type="text" placeholder="Redo Email">
+                <br>
+                <br>
+                <div class="col-md-12 text-center">
+                    <button id="createAccountButton" type="submit" class="btn btn-success btn-md">Создать</button>
+                </div>
+            </form>
+            <br><br><br>
+            <div class="col-md-2 text-center" style="padding-bottom: 10px;">
+                <button type="button" class="frontBackButton btn btn-success" onclick="showFrontpage()"><span class="glyphicon glyphicon-arrow-left"></span> Назад</button>
+            </div>
+        </div>
+
+        <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+    </div>
+</div>
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<!-- Implement JQeury lib -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- Implement Bootstrap lib -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<!-- Implement My Own JavaScript file -->
+<script src="js/login.js"></script>
+</body>
+</html>
